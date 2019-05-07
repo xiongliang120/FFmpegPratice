@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void decodeAudio(){
         DecodeAudio decodeAudio = new DecodeAudio();
-        decodeAudio.devodeAudio("/sdcard/test.mp4","/sdcard/test.pcm");
+        decodeAudio.devodeAudio("/sdcard/001.mp3","/sdcard/test.pcm");
 
     }
 

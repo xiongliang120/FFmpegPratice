@@ -16,7 +16,7 @@ static void decode(AVCodecContext *dec_ctx, AVPacket *pkt, AVFrame *frame,
     ret = avcodec_send_packet(dec_ctx, pkt);
     if (ret < 0) {
         LOGI("Error submitting the packet to the decoder\n");
-        exit(1);
+        //exit(1);
     }
     /* read all the output frames (in general there may be any number of them */
     while (ret >= 0) {

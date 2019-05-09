@@ -22,13 +22,16 @@ public class MainActivity extends AppCompatActivity {
             "android.permission.WRITE_EXTERNAL_STORAGE" };
 
     private Button decodeAudioButton;
+    private Button devodeVideoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         decodeAudioButton = findViewById(R.id.decodeAudioButton);
+        devodeVideoButton = findViewById(R.id.decodeVideoButton);
         decodeAudioButton.setOnClickListener(clickListener);
+        devodeVideoButton.setOnClickListener(clickListener);
         checkPermission();
 
     }
@@ -42,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.decodeAudioButton:
                     decodeAudio();
                     break;
+                case R.id.decodeVideoButton:
+                    decodeVideo();
+                    break;
                 default:
                     break;
             }
@@ -52,8 +58,14 @@ public class MainActivity extends AppCompatActivity {
     public void decodeAudio(){
         DecodeAudio decodeAudio = new DecodeAudio();
         decodeAudio.devodeAudio("/sdcard/001.mp3","/sdcard/test.pcm");
-
     }
+
+    public void decodeVideo(){
+        DecodeVideo decodeVideo = new DecodeVideo();
+        decodeVideo.devodeVideo("/sdcard/001.mp3","/sdcard/test.yuv");
+    }
+
+
 
     //读写权限
     private void checkPermission() {

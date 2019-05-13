@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.4.1)
 
-set(PATH_TO_MEDIACORE ${CMAKE_SOURCE_DIR}/src/main/cpp)
-set(PATH_TO_JNI_LAYER ${CMAKE_SOURCE_DIR}/src/main/jni)
-set(PATH_TO_PRE_BUILT ${CMAKE_SOURCE_DIR}/libs/${ANDROID_ABI})
+set(PATH_TO_MEDIACORE ${CMAKE_SOURCE_DIR}/../cpp)
+set(PATH_TO_JNI_LAYER ${CMAKE_SOURCE_DIR}/jni)
+set(PATH_TO_PRE_BUILT ${CMAKE_SOURCE_DIR}/../jniLibs/${ANDROID_ABI})
 
 
 
@@ -11,7 +11,7 @@ include_directories(${PATH_TO_MEDIACORE}/)
 include_directories(${PATH_TO_MEDIACORE}/decode/)
 include_directories(${PATH_TO_MEDIACORE}/common/)
 include_directories(${PATH_TO_JNI_LAYER}/)
-include_directories(${CMAKE_SOURCE_DIR}/libs/include/)
+include_directories(${CMAKE_SOURCE_DIR}/../jniLibs/include/)
 
 
 file(GLOB FILES_JNI_LAYER "${PATH_TO_JNI_LAYER}/*.cpp")

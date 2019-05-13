@@ -21,5 +21,18 @@
           android:id="@+id/decodeVideoButton"
           android:text="解码视频"/>
 
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/demuxAndDecode"
+          android:text="视频解复用和解码"
+          />
+
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/muxing"
+          android:text="封装"/>
+
   </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Button decodeAudioButton;
     private Button devodeVideoButton;
+    private Button demuxAndDecode;
+    private Button muxing;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +33,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         decodeAudioButton = findViewById(R.id.decodeAudioButton);
         devodeVideoButton = findViewById(R.id.decodeVideoButton);
+        demuxAndDecode = findViewById(R.id.demuxAndDecode);
+        muxing = findViewById(R.id.muxing);
         decodeAudioButton.setOnClickListener(clickListener);
         devodeVideoButton.setOnClickListener(clickListener);
+        demuxAndDecode.setOnClickListener(clickListener);
+        muxing.setOnClickListener(clickListener);
         checkPermission();
 
     }
@@ -48,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.decodeVideoButton:
                     decodeVideo();
                     break;
+                case R.id.demuxAndDecode:
+                    demuxAndDecode();
+                    break;
+                case R.id.muxing:
+                     break;
                 default:
                     break;
             }
@@ -63,6 +75,16 @@ public class MainActivity extends AppCompatActivity {
     public void decodeVideo(){
         DecodeVideo decodeVideo = new DecodeVideo();
         decodeVideo.devodeVideo("/sdcard/001.mp3","/sdcard/test.yuv");
+    }
+
+    public void demuxAndDecode(){
+        DemuxAndDecode demuxAndDecode = new DemuxAndDecode();
+        demuxAndDecode.demuxAndDecode("/sdcard/11.mp4","11.yuv","11.pcm");
+    }
+
+    public void muxing(){
+//        Muxing muxing = new Muxing();
+//        muxing.muxing();
     }
 
 

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 set(PATH_TO_MEDIACORE ${CMAKE_SOURCE_DIR}/../cpp)
-set(PATH_TO_JNI_LAYER ${CMAKE_SOURCE_DIR}/jni)
+set(PATH_TO_JNI_LAYER ${CMAKE_SOURCE_DIR}/../cpp/jni)
 set(PATH_TO_PRE_BUILT ${CMAKE_SOURCE_DIR}/../jniLibs/${ANDROID_ABI})
 
 

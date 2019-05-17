@@ -65,6 +65,6 @@ static int write_video_frame(AVFormatContext *oc, OutputStream *ost);
 
 static void close_stream(AVFormatContext *oc, OutputStream *ost);
 
-int muxing(int argc, char **argv);
+int muxing(char* inputAudioPath,char * inputVideoPath,char* outputPath);
 
 #endif //FFMPEGPRATICE_MASTER_MUXING_H

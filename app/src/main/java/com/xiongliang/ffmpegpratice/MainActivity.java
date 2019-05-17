@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     demuxAndDecode();
                     break;
                 case R.id.muxing:
+                    muxing();
                      break;
                 default:
                     break;
@@ -83,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void muxing(){
-//        Muxing muxing = new Muxing();
-//        muxing.muxing();
+        Muxing muxing = new Muxing();
+        muxing.muxing("/sdcard/22.mp3","sdcard/22.h264","22.mp4");
     }
 
 

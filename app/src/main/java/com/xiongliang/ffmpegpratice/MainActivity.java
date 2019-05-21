@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Button devodeVideoButton;
     private Button demuxAndDecode;
     private Button muxing;
+    private Button metadata;
 
 
     @Override
@@ -35,10 +36,12 @@ public class MainActivity extends AppCompatActivity {
         devodeVideoButton = findViewById(R.id.decodeVideoButton);
         demuxAndDecode = findViewById(R.id.demuxAndDecode);
         muxing = findViewById(R.id.muxing);
+        metadata = findViewById(R.id.metadata);
         decodeAudioButton.setOnClickListener(clickListener);
         devodeVideoButton.setOnClickListener(clickListener);
         demuxAndDecode.setOnClickListener(clickListener);
         muxing.setOnClickListener(clickListener);
+        metadata.setOnClickListener(clickListener);
         checkPermission();
 
     }
@@ -61,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.muxing:
                     muxing();
                      break;
+                case R.id.metadata:
+                    metadata();
+                    break;
                 default:
                     break;
             }
@@ -86,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
     public void muxing(){
         Muxing muxing = new Muxing();
         muxing.muxing("/sdcard/22.mp3","sdcard/22.h264","22.mp4");
+    }
+
+    public void metadata(){
+        Metadata metadata = new Metadata();
+        metadata.metadata("/sdcard/11.mp4");
     }
 
 

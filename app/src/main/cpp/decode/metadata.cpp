@@ -11,6 +11,7 @@ int metadata (char* inputFilePath)
         return ret;
     while ((tag = av_dict_get(fmt_ctx->metadata, "", tag, AV_DICT_IGNORE_SUFFIX)))
         LOGI("xiongliang %s=%s\n", tag->key, tag->value);
+
     avformat_close_input(&fmt_ctx);
     return 0;
 }

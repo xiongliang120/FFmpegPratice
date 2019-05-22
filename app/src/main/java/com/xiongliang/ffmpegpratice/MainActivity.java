@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Button devodeVideoButton;
     private Button demuxAndDecode;
     private Button muxing;
+    private Button demuxing;
     private Button metadata;
 
 
@@ -36,11 +37,13 @@ public class MainActivity extends AppCompatActivity {
         devodeVideoButton = findViewById(R.id.decodeVideoButton);
         demuxAndDecode = findViewById(R.id.demuxAndDecode);
         muxing = findViewById(R.id.muxing);
+        demuxing = findViewById(R.id.demuxing);
         metadata = findViewById(R.id.metadata);
         decodeAudioButton.setOnClickListener(clickListener);
         devodeVideoButton.setOnClickListener(clickListener);
         demuxAndDecode.setOnClickListener(clickListener);
         muxing.setOnClickListener(clickListener);
+        demuxing.setOnClickListener(clickListener);
         metadata.setOnClickListener(clickListener);
         checkPermission();
 
@@ -64,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.muxing:
                     muxing();
                      break;
+                case R.id.demuxing:
+                    demuxing();
+                    break;
                 case R.id.metadata:
                     metadata();
                     break;
@@ -86,17 +92,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void demuxAndDecode(){
         DemuxAndDecode demuxAndDecode = new DemuxAndDecode();
-        demuxAndDecode.demuxAndDecode("/sdcard/11.mp4","11.yuv","11.pcm");
+        demuxAndDecode.demuxAndDecode("/sdcard/11.mp4","/sdcard/11.yuv","/sdcard/11.pcm");
     }
 
     public void muxing(){
         Muxing muxing = new Muxing();
-        muxing.muxing("/sdcard/22.mp3","sdcard/22.h264","22.mp4");
+        muxing.muxing("/sdcard/22.mp3","sdcard/22.h264","/sdcard/22.mp4");
+    }
+
+    public void demuxing(){
+        Demuxing demuxing = new Demuxing();
+        demuxing.demuxing("/sdcard/11.mp4","/sdcard/33.h264","/sdcard/33/mp3");
     }
 
     public void metadata(){
         Metadata metadata = new Metadata();
-        metadata.metadata("/sdcard/11.mp4");
+        metadata.metadata("/sdcard/test.mp4");
     }
 
 

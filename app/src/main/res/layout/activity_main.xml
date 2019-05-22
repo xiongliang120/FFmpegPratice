@@ -35,6 +35,12 @@
           android:text="封装"/>
 
       <Button
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/demuxing"
+          android:text="解封装"/>
+
+      <Button
           android:id="@+id/metadata"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"

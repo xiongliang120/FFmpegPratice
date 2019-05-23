@@ -37,8 +37,8 @@
       <Button
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:id="@+id/demuxing"
-          android:text="解封装"/>
+          android:id="@+id/remuxing"
+          android:text="转封装"/>
 
       <Button
           android:id="@+id/metadata"

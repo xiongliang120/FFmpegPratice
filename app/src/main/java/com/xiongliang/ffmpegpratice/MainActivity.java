@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Button devodeVideoButton;
     private Button demuxAndDecode;
     private Button muxing;
-    private Button demuxing;
+    private Button remuxing;
     private Button metadata;
 
 
@@ -37,13 +36,13 @@ public class MainActivity extends AppCompatActivity {
         devodeVideoButton = findViewById(R.id.decodeVideoButton);
         demuxAndDecode = findViewById(R.id.demuxAndDecode);
         muxing = findViewById(R.id.muxing);
-        demuxing = findViewById(R.id.demuxing);
+        remuxing = findViewById(R.id.remuxing);
         metadata = findViewById(R.id.metadata);
         decodeAudioButton.setOnClickListener(clickListener);
         devodeVideoButton.setOnClickListener(clickListener);
         demuxAndDecode.setOnClickListener(clickListener);
         muxing.setOnClickListener(clickListener);
-        demuxing.setOnClickListener(clickListener);
+        remuxing.setOnClickListener(clickListener);
         metadata.setOnClickListener(clickListener);
         checkPermission();
 
@@ -67,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.muxing:
                     muxing();
                      break;
-                case R.id.demuxing:
-                    demuxing();
+                case R.id.remuxing:
+                    remuxing();
                     break;
                 case R.id.metadata:
                     metadata();
@@ -100,9 +99,9 @@ public class MainActivity extends AppCompatActivity {
         muxing.muxing("/sdcard/22.mp3","sdcard/22.h264","/sdcard/22.mp4");
     }
 
-    public void demuxing(){
-        Demuxing demuxing = new Demuxing();
-        demuxing.demuxing("/sdcard/11.mp4","/sdcard/33.h264","/sdcard/33/mp3");
+    public void remuxing(){
+        Remuxing demuxing = new Remuxing();
+        demuxing.remuxing("/sdcard/11.mp4","/sdcard/11.flv");
     }
 
     public void metadata(){

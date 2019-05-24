@@ -3,6 +3,7 @@
  */
 #ifndef FFMPEGPRATICE_REMUXING_H
 #define FFMPEGPRATICE_REMUXING_H
+#define __STDC_CONSTANT_MACROS
 
 extern "C"{
 #include <libavutil/timestamp.h>

@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Button muxing;
     private Button remuxing;
     private Button metadata;
-
+    private Button resample;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +38,14 @@ public class MainActivity extends AppCompatActivity {
         muxing = findViewById(R.id.muxing);
         remuxing = findViewById(R.id.remuxing);
         metadata = findViewById(R.id.metadata);
+        resample = findViewById(R.id.resample);
         decodeAudioButton.setOnClickListener(clickListener);
         devodeVideoButton.setOnClickListener(clickListener);
         demuxAndDecode.setOnClickListener(clickListener);
         muxing.setOnClickListener(clickListener);
         remuxing.setOnClickListener(clickListener);
         metadata.setOnClickListener(clickListener);
+        resample.setOnClickListener(clickListener);
         checkPermission();
 
     }
@@ -71,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.metadata:
                     metadata();
+                    break;
+                case R.id.resample:
+                    resample();
                     break;
                 default:
                     break;
@@ -107,6 +112,12 @@ public class MainActivity extends AppCompatActivity {
     public void metadata(){
         Metadata metadata = new Metadata();
         metadata.metadata("/sdcard/test.mp4");
+    }
+
+    public void resample(){
+        Resample resample = new Resample();
+        resample.resample("");
+
     }
 
 

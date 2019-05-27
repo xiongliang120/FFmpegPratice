@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button encodeAudio;
     private Button encodeVideo;
+    private Button scaleVideo;
 
 
     @Override
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         resample = findViewById(R.id.resample);
         encodeAudio = findViewById(R.id.encodeAudio);
         encodeVideo = findViewById(R.id.encodeVideo);
+        scaleVideo = findViewById(R.id.scaleVideo);
 
         decodeAudioButton.setOnClickListener(clickListener);
         devodeVideoButton.setOnClickListener(clickListener);
@@ -54,8 +56,9 @@ public class MainActivity extends AppCompatActivity {
         metadata.setOnClickListener(clickListener);
         encodeVideo.setOnClickListener(clickListener);
         encodeAudio.setOnClickListener(clickListener);
-
         resample.setOnClickListener(clickListener);
+        scaleVideo.setOnClickListener(clickListener);
+
         checkPermission();
 
     }
@@ -92,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.encodeVideo:
                     encodeVideo();
+                    break;
+                case R.id.scaleVideo:
+                    scaleVideo();
                     break;
                 default:
                     break;
@@ -146,6 +152,10 @@ public class MainActivity extends AppCompatActivity {
         encodeVideo.encodeVideo("/sdcard/encodeVideo.h264");
     }
 
+    public void scaleVideo(){
+        ScaleVideo scaleVideo = new ScaleVideo();
+        scaleVideo.scaleVideo("/sdcard/11.mp4");
+    }
 
 
     //读写权限

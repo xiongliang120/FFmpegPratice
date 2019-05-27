@@ -66,5 +66,11 @@
           android:layout_height="wrap_content"
           android:text="编码视频"/>
 
+      <Button
+          android:id="@+id/scaleVideo"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="缩放视频"/>
+
   </LinearLayout>
 </android.support.constraint.ConstraintLayout>

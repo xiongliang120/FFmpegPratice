@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     private Button metadata;
     private Button resample;
 
+    private Button encodeAudio;
+    private Button encodeVideo;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,12 +43,18 @@ public class MainActivity extends AppCompatActivity {
         remuxing = findViewById(R.id.remuxing);
         metadata = findViewById(R.id.metadata);
         resample = findViewById(R.id.resample);
+        encodeAudio = findViewById(R.id.encodeAudio);
+        encodeVideo = findViewById(R.id.encodeVideo);
+
         decodeAudioButton.setOnClickListener(clickListener);
         devodeVideoButton.setOnClickListener(clickListener);
         demuxAndDecode.setOnClickListener(clickListener);
         muxing.setOnClickListener(clickListener);
         remuxing.setOnClickListener(clickListener);
         metadata.setOnClickListener(clickListener);
+        encodeVideo.setOnClickListener(clickListener);
+        encodeAudio.setOnClickListener(clickListener);
+
         resample.setOnClickListener(clickListener);
         checkPermission();
 
@@ -76,6 +86,12 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.resample:
                     resample();
+                    break;
+                case R.id.encodeAudio:
+                    encodeAudio();
+                    break;
+                case R.id.encodeVideo:
+                    encodeVideo();
                     break;
                 default:
                     break;
@@ -118,6 +134,16 @@ public class MainActivity extends AppCompatActivity {
         Resample resample = new Resample();
         resample.resample("");
 
+    }
+
+    public void encodeAudio(){
+        EncodeAudio encodeAudio = new EncodeAudio();
+        encodeAudio.encodeAudio("/sdcard/encodeAudio.mp3");
+    }
+
+    public void encodeVideo(){
+        EncodeVideo encodeVideo = new EncodeVideo();
+        encodeVideo.encodeVideo("/sdcard/encodeVideo.h264");
     }
 
 

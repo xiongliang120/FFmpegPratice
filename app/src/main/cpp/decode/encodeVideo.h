@@ -16,5 +16,6 @@ extern "C"{
 
 static void encode(AVCodecContext *enc_ctx, AVFrame *frame, AVPacket *pkt,
                    FILE *outfile);
+int encodeVideoForFFmpeg(char* outputVideoPath,char* codecName);
 
 #endif //FFMPEGPRATICE_ENCODEVIDEO_H

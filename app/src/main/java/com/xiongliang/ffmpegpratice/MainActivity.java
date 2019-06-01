@@ -138,23 +138,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void resample(){
         Resample resample = new Resample();
-        resample.resample("");
+        resample.resample("/sdcard/test.pcm");
 
     }
 
     public void encodeAudio(){
         EncodeAudio encodeAudio = new EncodeAudio();
-        encodeAudio.encodeAudio("/sdcard/encodeAudio.mp3");
+        encodeAudio.encodeAudio("/sdcard/encodeAudio.mp2");
     }
 
     public void encodeVideo(){
         EncodeVideo encodeVideo = new EncodeVideo();
-        encodeVideo.encodeVideo("/sdcard/encodeVideo.h264");
+        encodeVideo.encodeVideo("/sdcard/encodeVideo.h264","mpeg1video");
     }
 
     public void scaleVideo(){
         ScaleVideo scaleVideo = new ScaleVideo();
-        scaleVideo.scaleVideo("/sdcard/11.mp4");
+        scaleVideo.scaleVideo("/sdcard/encodeVideo.h264","100x200");
     }
 
 

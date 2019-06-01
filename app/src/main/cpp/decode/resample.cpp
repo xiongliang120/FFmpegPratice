@@ -131,13 +131,12 @@ int resampleForFFmpeg(char* filePath)
             LOGI( "Could not get sample buffer size\n");
             goto end;
         }
-        printf("t:%f in:%d out:%d\n", t, src_nb_samples, ret);
+        LOGI("t:%f in:%d out:%d\n", t, src_nb_samples, ret);
         fwrite(dst_data[0], 1, dst_bufsize, dst_file);
     } while (t < 10);
     if ((ret = get_format_from_sample_fmt(&fmt, dst_sample_fmt)) < 0)
         goto end;
-    LOGI("Resampling succeeded. ffplay -f %s -channel_layout %d -channels %d -ar %d %s\n",
-            fmt, dst_ch_layout, dst_nb_channels, dst_rate, dst_filename);
+    LOGI("Resampling succeeded. ffplay -f %s -channel_layout  -channels %d -ar %d %s\n",fmt, dst_nb_channels, dst_rate, dst_filename);
     end:
     fclose(dst_file);
     if (src_data)

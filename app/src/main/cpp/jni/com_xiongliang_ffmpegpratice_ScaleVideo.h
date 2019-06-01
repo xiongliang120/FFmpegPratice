@@ -13,7 +13,7 @@ extern "C" {
  * Signature: (Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_com_xiongliang_ffmpegpratice_ScaleVideo_scaleVideo
-  (JNIEnv *, jobject, jstring);
+  (JNIEnv *, jobject, jstring,jstring);
 
 #ifdef __cplusplus
 }
